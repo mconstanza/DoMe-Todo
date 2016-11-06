@@ -1,26 +1,41 @@
 <div class='container'>
 
-  <div class='header text-center'>
+  <div class='page-header text-center'>
     <h1>Do Me!</h1>
   </div>
 
   <div class='row text-center'>
     <div class='col-md-6'>
       <h2>Stuff that isn't done</h2>
+      <hr>
 
       <ul id='todo-not-completed'>
         {{#each todos}}
           {{#unless this.completed}}
+          <div class='row text-center'>
+            <div class='col-md-8'>
             <li class='todo' id='{{this.id}}'>
-              {{this.item}}
+              <h4>
+                {{this.item}}
+              </h4>
+            </div>
 
+            <div class='col-md-2'>
               <form id='{{this.id}}' action="todo/{{this.id}}?_method=PUT" method="POST">
                 <input type="hidden" name="completed" value="true">
-                <button type="submit">Did that $&!#!</button>
+              <button class='btn btn-default' type="submit">Done!</button>
               </form>
+            </div>
 
+
+            <div class='col-md-2'>
               {{> todo/delete-todo}}
+            </div>
             </li>
+          </div>
+
+            <hr>
+
           {{/unless}}
         {{/each}}
       </ul>
@@ -28,20 +43,35 @@
 
     <div class='col-md-6'>
       <h2>Stuff I did</h2>
+      <hr>
 
       <ul>
         {{#each todos}}
           {{#if this.completed}}
+          <div class='row text-center'>
+            <div class='col-md-8'>
             <li>
-              {{this.item}}
+              <h4>
+                <strike>{{this.item}}</strike>
+              </h4>
+            </div>
 
+
+            <div class='col-md-2'>
               <form action="todo/{{this.id}}?_method=PUT" method="POST">
                 <input type="hidden" name="completed" value="false">
-                <button type="submit">I didn't actually do it...</button>
+                <button class='btn btn-default' type="submit">Do again.</button>
               </form>
+            </div>
 
+            <div class='col-md-2'>
               {{> todo/delete-todo}}
             </li>
+            </div>
+          </div>
+
+            <hr>
+
           {{/if}}
         {{/each}}
       </ul>
@@ -54,16 +84,16 @@
     <form class="create-update-form" action="todo" method="POST">
 
       <div class="form-group">
-        <label for="todo">Item:</label>
+        <label for="todo"><h4>Item:</h4</label>
         <input type="text" id="todo" name="item">
       </div>
 
       <div class="form-group">
-        <input type="hidden" name="completed" value="0" checked> I need to do this!<br>
+        <input type="hidden" name="completed" value="0" checked>
         <!-- <input type="radio" name="completed" value="1"> Done -->
       </div>
 
-      <button type="submit">Add Item</button>
+      <button class='btn btn-primary' type="submit">I need to do this!</button>
     </form>
   </div> <!--row-->
 </div>
