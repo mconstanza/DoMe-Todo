@@ -1,7 +1,21 @@
 <div class='container'>
 
-  <div class='page-header text-center'>
+  <div class="jumbotron">
     <h1>Do Me!</h1>
+      <form class="create-update-form" action="todo" method="POST">
+
+        <div class="form-group">
+          <label for="todo"><h4>Item:</h4</label>
+          <input type="text" id="todo" name="item">
+        </div>
+
+        <div class="form-group">
+          <input type="hidden" name="completed" value="0" checked>
+          <!-- <input type="radio" name="completed" value="1"> Done -->
+        </div>
+        <button class='btn btn-primary' type="submit">Add Stuff to Do</button>
+      </form>
+    </div> <!--row-->
   </div>
 
   <div class='row text-center'>
@@ -77,23 +91,4 @@
       </ul>
     </div> <!--col 6 -->
   </div> <!--row -->
-
-
-  <div class='row text-center'>
-    <h2>Add Stuff to Do</h2>
-    <form class="create-update-form" action="todo" method="POST">
-
-      <div class="form-group">
-        <label for="todo"><h4>Item:</h4</label>
-        <input type="text" id="todo" name="item">
-      </div>
-
-      <div class="form-group">
-        <input type="hidden" name="completed" value="0" checked>
-        <!-- <input type="radio" name="completed" value="1"> Done -->
-      </div>
-
-      <button class='btn btn-primary' type="submit">I need to do this!</button>
-    </form>
-  </div> <!--row-->
 </div>
