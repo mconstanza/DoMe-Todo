@@ -1,4 +1,5 @@
-var connection = require('./connection.js');
+// var connection = require('./connection.js');
+var connection = mysql.createConnection(process.env.JAWSDB_URL);
 
 var orm = {
 
