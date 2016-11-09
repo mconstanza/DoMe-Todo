@@ -2,6 +2,7 @@
 
   <div class="jumbotron text-center">
     <h1>Do Me!</h1>
+    <br>
       <form class="create-update-form" action="todo" method="POST">
 
         <div class="form-group">
@@ -15,7 +16,8 @@
         <button class='btn btn-primary' type="submit">Add Stuff to Do</button>
       </form>
     </div> <!--row-->
-  </div>
+
+    <hr>
 
   <div class='row text-center'>
     <div class='col-md-6'>
@@ -25,7 +27,7 @@
       <ul id='todo-not-completed'>
         {{#each todos}}
           {{#unless this.completed}}
-          <div class='row text-center'>
+          <div class='row text-left'>
             <div class='col-md-8'>
             <li class='todo' id='{{this.id}}'>
               <h4>
@@ -36,7 +38,7 @@
             <div class='col-md-2'>
               <form id='{{this.id}}' action="todo/{{this.id}}?_method=PUT" method="POST">
                 <input type="hidden" name="completed" value="true">
-              <button class='btn btn-default' type="submit">Done!</button>
+              <button class='btn btn-default done-button' type="submit">Done!</button>
               </form>
             </div>
 
@@ -61,9 +63,9 @@
       <ul>
         {{#each todos}}
           {{#if this.completed}}
-          <div class='row text-center'>
+          <div class='row text-left'>
             <div class='col-md-8'>
-            <li>
+            <li class'li-right'>
               <h4>
                 <strike>{{this.item}}</strike>
               </h4>
@@ -73,7 +75,7 @@
             <div class='col-md-2'>
               <form action="todo/{{this.id}}?_method=PUT" method="POST">
                 <input type="hidden" name="completed" value="false">
-                <button class='btn btn-default' type="submit">Do again.</button>
+                <button class='btn btn-default again-button' type="submit">Repeat</button>
               </form>
             </div>
 
