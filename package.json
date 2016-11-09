@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nessfalco/ToDoHandlebars.git"
+    "url": "git+https://github.com/nessfalco/DoMe-Todo.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nessfalco/ToDoHandlebars/issues"
+    "url": "https://github.com/nessfalco/DoMe-Todo/issues"
   },
-  "homepage": "https://github.com/nessfalco/ToDoHandlebars#readme",
+  "homepage": "https://github.com/nessfalco/DoMe-Todo#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
